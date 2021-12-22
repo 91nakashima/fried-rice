@@ -21,6 +21,7 @@
 
     <q-page-container>
       <!-- <router-view /> -->
+      <Test />
       <div v-for="m in drawerState" :key="m.id">
         <div>{{ m.id }}</div>
       </div>
