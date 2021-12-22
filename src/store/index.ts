@@ -3,26 +3,20 @@ import { initFirebase } from './initfirebase'
 import { createStore } from 'vuex'
 import { createApp } from 'vue'
 import App from '../App.vue'
+import { setmodules } from './modules/setmodules'
 
-import Message from './modules/M_Message'
+const storeData = {
+  plugins: [],
+  modules: setmodules()
+}
+
+const app = createApp({ App })
+const Store = createStore(storeData)
+app.use(Store)
+initFirebase()
 
 export interface StateInterface {
   example: unknown
 }
 
-const app = createApp({ App })
-
-const Store = createStore({
-  plugins: [],
-  modules: { M_Message: Message }
-})
-
-app.use(Store)
-
-initFirebase().catch(error => {
-  console.log(error)
-})
-
-export default store(() => {
-  return Store
-})
+export default store(() => Store)
