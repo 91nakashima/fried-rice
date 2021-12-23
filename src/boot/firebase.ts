@@ -1,5 +1,3 @@
-import * as firebase from 'firebase/app'
-import * as firestore from 'firebase/firestore'
 import { getAuth, onAuthStateChanged } from 'firebase/auth'
 
 export default ({ app, router, store }: any) => {
@@ -21,7 +19,4 @@ export default ({ app, router, store }: any) => {
   } else {
     init()
   }
-
-  store.$firebase = firebase
-  store.$firestore = firestore
 }
