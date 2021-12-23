@@ -6,6 +6,15 @@ function initialState () {
   }
 }
 
+type mainData = {
+  id: string
+  msg: string
+  created_at: any
+  created_by: string
+  updated_at: any
+  updated_by: string
+}
+
 export default {
   namespaced: true,
 
@@ -13,13 +22,13 @@ export default {
 
   getters: {
     getMessageData: (state: any) =>
-      state.data.sort((a: any, b: any) => {
+      state.data.sort((a: mainData, b: mainData) => {
         return Number(a.id) - Number(b.id)
       })
   },
 
   mutations: {
-    initData (state: any, value: Array<any>) {
+    initData (state: any, value: Array<mainData>) {
       state.data = value
     },
     reset (state: any) {
@@ -35,6 +44,10 @@ export default {
         const haveData: Array<any> = state.data || []
 
         snapshot.docChanges().forEach(change => {
+          // 削除
+          // 追加
+          // 更新
+          // 追加はいいけど、それ以外は修正が必要
           haveData.push(change.doc.data())
         })
 
