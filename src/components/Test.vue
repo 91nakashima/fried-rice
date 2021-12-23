@@ -14,6 +14,11 @@ export default defineComponent({
       type: String,
       default: 'こんにちは'
     }
+  },
+  setup () {
+    // 新機能!!
+    // どうやら、ウロウロしている処理をまとめることができるらしい笑
+    return {}
   }
 })
 </script>

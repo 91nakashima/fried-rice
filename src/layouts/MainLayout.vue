@@ -2,20 +2,9 @@
   <q-layout view="lHh Lpr lFf">
     <q-header elevated>
       <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          icon="menu"
-          aria-label="Menu"
-          @click="toggleLeftDrawer"
-        />
-
         <q-toolbar-title>
-          Quasar App
+          ちゃーはんの作り方
         </q-toolbar-title>
-
-        <div>Quasar v{{ $q.version }}</div>
       </q-toolbar>
     </q-header>
 
@@ -23,7 +12,7 @@
       <!-- <router-view /> -->
       <Test />
       <div v-for="m in drawerState" :key="m.id">
-        <div>{{ m.id }}</div>
+        <div>{{ m.id }} ： {{ m.msg }}</div>
       </div>
     </q-page-container>
   </q-layout>
