@@ -10,6 +10,8 @@
 
     <q-page-container>
       <!-- <router-view /> -->
+      <MainInput label="うんち" v-model:title="d_Input" />
+      <q-btn @click="setData" label="保存" />
       <Test />
       <div v-for="m in drawerState" :key="m.id">
         <div>{{ m.id }} ： {{ m.msg }}</div>
@@ -26,6 +28,7 @@ export default defineComponent({
   name: 'MainLayout',
 
   setup () {
+    const d_Input = ref('')
     const leftDrawerOpen = ref(false)
 
     const $store: any = useStore()
@@ -37,13 +40,23 @@ export default defineComponent({
       }
     })
 
+    const setData: any = () => {
+      $store.dispatch('M_Message/setDoc', {
+        msg: d_Input.value
+      })
+    }
+
     return {
+      d_Input,
+      setData, // 保存
       leftDrawerOpen,
       drawerState,
       toggleLeftDrawer () {
         leftDrawerOpen.value = !leftDrawerOpen.value
       }
     }
-  }
+  },
+  computed: {},
+  methods: {}
 })
 </script>

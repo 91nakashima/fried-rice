@@ -1,4 +1,11 @@
-import { getFirestore, collection, onSnapshot } from 'firebase/firestore'
+import {
+  getFirestore,
+  collection,
+  onSnapshot,
+  doc,
+  setDoc
+} from 'firebase/firestore'
+import { getAuth } from 'firebase/auth'
 
 function initialState () {
   return {
@@ -10,7 +17,7 @@ type mainData = {
   id: string
   msg: string
   created_at: any
-  created_by: string
+  created_by: string | undefined
   updated_at: any
   updated_by: string
 }
@@ -41,18 +48,46 @@ export default {
       const db = getFirestore()
       const q = collection(db, 'M_Message')
       onSnapshot(q, snapshot => {
-        const haveData: Array<any> = state.data || []
+        let haveData: Array<any> = state.data || []
 
         snapshot.docChanges().forEach(change => {
-          // 削除
-          // 追加
-          // 更新
-          // 追加はいいけど、それ以外は修正が必要
-          haveData.push(change.doc.data())
+          if (change.type === 'added') {
+            // *追加
+            haveData.push(change.doc.data())
+          }
+          if (change.type === 'modified') {
+            // *更新
+            const modifiedData: any = change.doc.data()
+            haveData.map((d: mainData) => {
+              if (d.id === modifiedData.id) {
+                d = modifiedData
+              }
+              return d
+            })
+          }
+          if (change.type === 'removed') {
+            // *削除
+            haveData = haveData.filter(
+              (d: mainData) => d.id !== change.doc.data().id
+            )
+          }
         })
 
         commit('initData', haveData)
       })
+    },
+
+    setDoc ({ dispatch, rootState, state }: any, data: mainData) {
+      data = {
+        ...data,
+        ...{
+          created_at: new Date(),
+          created_by: getAuth().currentUser?.uid
+        }
+      }
+      const db = getFirestore()
+      const newdata = doc(collection(db, 'M_Message'))
+      return setDoc(newdata, data)
     }
   }
 }

@@ -54,6 +54,7 @@ module.exports = {
   plugins: [
     // required to apply rules which need type information
     '@typescript-eslint',
+    // 'plugin:vue/vue3-recommended'
 
     // https://eslint.vuejs.org/user-guide/#why-doesn-t-it-work-on-vue-file
     // required to lint *.vue files
@@ -80,7 +81,9 @@ module.exports = {
     '@typescript-eslint/no-unsafe-call': 'off',
     '@typescript-eslint/no-unsafe-assignment': 'off',
     '@typescript-eslint/no-unsafe-member-access': 'off',
+    'vue/no-v-model-argument': 'off',
     // 'comma-dangle': ['error', 'always-multiline'],
+
     quotes: 'off',
 
     // allow debugger during development only
