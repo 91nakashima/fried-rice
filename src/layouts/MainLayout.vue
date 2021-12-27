@@ -10,7 +10,7 @@
 
     <q-page-container>
       <!-- <router-view /> -->
-      <MainInput label="うんち" v-model:title="d_Input" />
+      <MainInput label="メッセージ" v-model:title="d_Input" />
       <q-btn @click="setData" label="保存" />
       <Test />
       <div v-for="m in drawerState" :key="m.id">
@@ -24,12 +24,21 @@
 import { defineComponent, ref, computed } from 'vue'
 import { useStore } from 'vuex'
 
+const init = () => {
+  const d_Input = ref('')
+  const leftDrawerOpen = ref(false)
+
+  return {
+    d_Input,
+    leftDrawerOpen
+  }
+}
+
 export default defineComponent({
   name: 'MainLayout',
 
   setup () {
-    const d_Input = ref('')
-    const leftDrawerOpen = ref(false)
+    const { d_Input, leftDrawerOpen } = init()
 
     const $store: any = useStore()
 
@@ -41,7 +50,7 @@ export default defineComponent({
     })
 
     const setData: any = () => {
-      $store.dispatch('M_Message/setDoc', {
+      $store.dispatch('M_Message/setDocs', {
         msg: d_Input.value
       })
     }
@@ -55,8 +64,6 @@ export default defineComponent({
         leftDrawerOpen.value = !leftDrawerOpen.value
       }
     }
-  },
-  computed: {},
-  methods: {}
+  }
 })
 </script>

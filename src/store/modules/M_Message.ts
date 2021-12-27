@@ -3,7 +3,8 @@ import {
   collection,
   onSnapshot,
   doc,
-  setDoc
+  addDoc,
+  updateDoc
 } from 'firebase/firestore'
 import { getAuth } from 'firebase/auth'
 
@@ -53,19 +54,24 @@ export default {
         snapshot.docChanges().forEach(change => {
           if (change.type === 'added') {
             // *追加
-            haveData.push(change.doc.data())
-          }
-          if (change.type === 'modified') {
+            if (change.doc.data().id) {
+              haveData.push(change.doc.data())
+            }
+          } else if (change.type === 'modified') {
             // *更新
             const modifiedData: any = change.doc.data()
-            haveData.map((d: mainData) => {
-              if (d.id === modifiedData.id) {
-                d = modifiedData
-              }
-              return d
-            })
-          }
-          if (change.type === 'removed') {
+
+            if (haveData.some((d: mainData) => d.id === modifiedData.id)) {
+              haveData.map((d: mainData) => {
+                if (d.id === modifiedData.id) {
+                  d = modifiedData
+                }
+                return d
+              })
+            } else {
+              haveData.push(change.doc.data())
+            }
+          } else if (change.type === 'removed') {
             // *削除
             haveData = haveData.filter(
               (d: mainData) => d.id !== change.doc.data().id
@@ -77,17 +83,20 @@ export default {
       })
     },
 
-    setDoc ({ dispatch, rootState, state }: any, data: mainData) {
+    async setDocs ({ dispatch, rootState, state }: any, data: mainData) {
       data = {
         ...data,
         ...{
           created_at: new Date(),
-          created_by: getAuth().currentUser?.uid
+          created_by: getAuth().currentUser?.uid || ''
         }
       }
       const db = getFirestore()
-      const newdata = doc(collection(db, 'M_Message'))
-      return setDoc(newdata, data)
+      const newdata = collection(db, 'M_Message')
+      const getId: any = await addDoc(newdata, data)
+      // IDを追加
+      const addId = doc(db, 'M_Message', getId.id)
+      return updateDoc(addId, { id: getId.id })
     }
   }
 }
