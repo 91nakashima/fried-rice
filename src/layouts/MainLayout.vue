@@ -21,17 +21,26 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, computed } from 'vue'
+import { defineComponent, ref, computed, ComputedRef } from 'vue'
 import { useStore } from 'vuex'
 
 const init = () => {
-  const d_Input = ref('')
-  const leftDrawerOpen = ref(false)
+  const d_Input = ref<string>('')
+  const leftDrawerOpen = ref<boolean>(false)
 
   return {
     d_Input,
     leftDrawerOpen
   }
+}
+
+type mainData = {
+  id: string
+  msg: string
+  created_at: any
+  created_by: string | undefined
+  updated_at: any
+  updated_by: string
 }
 
 export default defineComponent({
@@ -42,18 +51,20 @@ export default defineComponent({
 
     const $store: any = useStore()
 
-    const drawerState: any = computed({
-      get: () => $store.getters['M_Message/getMessageData'],
-      set: () => {
-        $store.dispatch('M_Message/getDocs')
-      }
-    })
+    const drawerState: ComputedRef<Array<mainData>> = computed(
+      () => $store.getters['M_Message/getMessageData'] || []
+    )
+
+    drawerState.value.sort(
+      (a: mainData, b: mainData) => a.created_at - b.created_at
+    )
 
     const setData: any = () => {
       $store.dispatch('M_Message/setDocs', {
         msg: d_Input.value
       })
     }
+    d_Input.value = ''
 
     return {
       d_Input,
