@@ -8,5 +8,10 @@
 import SwiftUI
 
 class Model: ObservableObject {
-    @Published var secondViewPushed = false
+    var isNative : Bool = true
+    
+    func change(flg: Bool) {
+        isNative = flg
+    }
+    
 }

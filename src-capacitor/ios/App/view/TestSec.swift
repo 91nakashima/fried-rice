@@ -1,8 +1,22 @@
-//
-//  TestSec.swift
-//  App
-//
-//  Created by 中島慶樹 on 2022/01/21.
-//
+import SwiftUI
+import UIKit
+import Capacitor
 
-import Foundation
+struct TestSec : View {
+    @Environment(\.presentationMode) var presentationMode
+    
+    var body: some View {
+        VStack {
+            Button(action: {
+                presentationMode.wrappedValue.dismiss()
+                
+            }, label: {
+                Text("swiftUI2枚目")
+            })
+        }.navigationBarBackButtonHidden(true).onAppear {
+            print("Testを表示")
+        }.onDisappear {
+            print("Testを非表示")
+        }
+    }
+}

@@ -1,5 +1,5 @@
 import { store } from 'quasar/wrappers'
-import { initFirebase } from './initfirebase'
+// import { initFirebase } from './initfirebase'
 import { createStore } from 'vuex'
 import { createApp } from 'vue'
 import App from '../App.vue'
@@ -13,7 +13,7 @@ const storeData = {
 const app = createApp({ App })
 const Store = createStore(storeData)
 app.use(Store)
-initFirebase()
+// initFirebase()
 
 export interface StateInterface {
   example: unknown

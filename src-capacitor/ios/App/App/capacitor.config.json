@@ -1,0 +1,10 @@
+{
+	"appId": "com.friedfice.app",
+	"appName": "fried-rice",
+	"bundledWebRuntime": false,
+	"npmClient": "npm",
+	"webDir": "www",
+	"server": {
+		"url": "http://192.168.1.123:8080"
+	}
+}

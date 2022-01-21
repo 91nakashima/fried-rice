@@ -7,20 +7,27 @@
 
 import Capacitor
 import SwiftUI
+import UIKit
 
 @objc(EchoPlugin)
 public class EchoPlugin: CAPPlugin {
-  @objc func echo(_ call: CAPPluginCall) {
-//    let value = call.getString("value") ?? ""
-//    call.resolve([
-//        "value": value
-//    ])
-      
-      let contentView = ContentView()
-      
-      let window = UIWindow(frame: UIScreen.main.bounds)
-      window.rootViewController = UIHostingController(rootView: contentView)
-//      self.window = window
-      window.makeKeyAndVisible()
-  }
+    @objc func echo(_ call: CAPPluginCall) {
+        let value = call.getString("value") ?? ""
+        call.resolve([
+            "value": value
+        ])
+    }
+    
+    @objc func toNativePage(_ call: CAPPluginCall) {
+        
+        DispatchQueue.main.async {
+            let nativeViewController: UIViewController = UIHostingController(rootView: Test())
+            nativeViewController.modalPresentationStyle = .fullScreen
+            self.bridge?.viewController?.present(nativeViewController, animated: true, completion: nil)
+        }
+        
+        call.resolve([
+            "value": "ok"
+        ])
+    }
 }

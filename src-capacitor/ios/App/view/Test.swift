@@ -1,16 +1,38 @@
-import UIKit
 import SwiftUI
+import UIKit
+import Capacitor
 
-class ViewController: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        let vc: UIHostingController = UIHostingController(rootView: ContentView())
-        view.addSubview(vc.view)
+struct Test : View {
+        @Environment(\.presentationMode) var presentationMode
+    
+    @State var isActiveSubView: Bool = false
+    
+    var body: some View {
+        Button(action: {
+            presentationMode.wrappedValue.dismiss()
+        }, label: {
+            Text("Capacitorに戻る")
+        })
         
-        vc.view.translatesAutoresizingMaskIntoConstraints = false
-        vc.view.heightAnchor.constraint(equalToConstant: 200).isActive = true
-        vc.view.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 16).isActive = true
-        vc.view.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -16).isActive = true
-        vc.view.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+        NavigationView {
+            VStack {
+                
+                NavigationLink(destination: TestSec(), isActive: $isActiveSubView) {
+                    EmptyView()
+                }
+                
+                
+                Button(action: {
+                    print("クリック1枚目")
+                    self.isActiveSubView = true
+                }, label: {
+                    Text("swiftUI1枚目")
+                })
+            }.onAppear {
+                print("Testを表示")
+            }.onDisappear {
+                print("Testを非表示")
+            }
+        }
     }
 }

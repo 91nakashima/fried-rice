@@ -4,7 +4,8 @@ import {
   onSnapshot,
   doc,
   addDoc,
-  updateDoc
+  updateDoc,
+  Timestamp // 型
 } from 'firebase/firestore'
 import { getAuth } from 'firebase/auth'
 
@@ -17,10 +18,10 @@ function initialState () {
 type mainData = {
   id: string
   msg: string
-  created_at: any
+  created_at: Timestamp | Date
   created_by: string | undefined
-  updated_at: any
-  updated_by: string
+  updated_at: Timestamp | Date
+  updated_by: string | undefined
 }
 
 export default {

@@ -1,49 +1,37 @@
 <template>
-  <q-page class="row items-center justify-evenly">
-    <example-component
-      title="Example component"
-      active
-      :todos="todos"
-      :meta="meta"
-    ></example-component>
-  </q-page>
+  <div class="_page">
+    <q-btn
+      color="white"
+      text-color="black"
+      label="swift画面に遷移"
+      class="_to_btn"
+      @click="funTest"
+    />
+  </div>
 </template>
 
+<style lang="sass" scoped>
+// $
+._page
+  display: flex
+  justify-content: center
+  padding: 50px
+</style>
+
 <script lang="ts">
-import { Todo, Meta } from './../components/models'
-import ExampleComponent from 'components/CompositionComponent.vue'
-import { defineComponent, ref } from 'vue'
+import { defineComponent, ref, onMounted } from 'vue'
+import Echo from '../model/customPlugin'
 
 export default defineComponent({
   name: 'PageIndex',
-  components: { ExampleComponent },
+
   setup () {
-    const todos = ref<Todo[]>([
-      {
-        id: 1,
-        content: 'ct1'
-      },
-      {
-        id: 2,
-        content: 'ct2'
-      },
-      {
-        id: 3,
-        content: 'ct3'
-      },
-      {
-        id: 4,
-        content: 'ct4'
-      },
-      {
-        id: 5,
-        content: 'ct5'
-      }
-    ])
-    const meta = ref<Meta>({
-      totalCount: 1200
-    })
-    return { todos, meta }
+    const funTest = () => {
+      Echo.toNativePage({ value: location.href })
+    }
+    return {
+      funTest
+    }
   }
 })
 </script>

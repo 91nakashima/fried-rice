@@ -7,9 +7,14 @@
   "private": true,
   "scripts": {
     "lint": "eslint --ext .js,.ts,.vue ./",
-    "test": "echo \"No test specified\" && exit 0"
+    "test": "echo \"No test specified\" && exit 0",
+    "dev-ios": "quasar dev -m capacitor -T ios"
   },
   "dependencies": {
+    "@capacitor/app": "^1.0.7",
+    "@capacitor/cli": "^3.3.4",
+    "@capacitor/core": "^3.3.4",
+    "@capacitor/ios": "^3.3.4",
     "@quasar/extras": "^1.0.0",
     "core-js": "^3.6.5",
     "eslint-plugin-vue-scoped-css": "^2.0.0",

@@ -1,0 +1,7 @@
+{
+  "appId": "com.friedfice.app",
+  "appName": "fried-rice",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www"
+}
