@@ -15,10 +15,5 @@ class MyViewController: CAPBridgeViewController {
     }
     
     
-    func toNativePage () {
-//        return self.bridge?.PortablePath(self)
-    }
-    
-    
     
 }

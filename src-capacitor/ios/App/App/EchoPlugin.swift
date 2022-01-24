@@ -21,10 +21,11 @@ public class EchoPlugin: CAPPlugin {
     @objc func toNativePage(_ call: CAPPluginCall) {
         
         DispatchQueue.main.async {
-            let nativeViewController: UIViewController = UIHostingController(rootView: Test())
+            let nativeViewController: UIViewController = UIHostingController(rootView: ViewContoroller().environmentObject(MainState()))
             nativeViewController.modalPresentationStyle = .fullScreen
             self.bridge?.viewController?.present(nativeViewController, animated: true, completion: nil)
         }
+        
         
         call.resolve([
             "value": "ok"
