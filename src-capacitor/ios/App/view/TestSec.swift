@@ -8,10 +8,13 @@ struct TestSec : View {
     
     
     var body: some View {
+        
         VStack {
             Text("swiftUI2枚目")
             TextField("プレースホルダー", text: $text.CapacitorReturnData).textFieldStyle(RoundedBorderTextFieldStyle()).padding()
+            
             Button(action: {
+                
                 presentationMode.wrappedValue.dismiss()
                 print("==========")
                 print(text.CapacitorReturnData)
@@ -20,10 +23,15 @@ struct TestSec : View {
             }, label: {
                 Text("Capacitorに戻る")
             })
-        }.navigationBarBackButtonHidden(true).onAppear {
-            print("TestSecを表示")
-        }.onDisappear {
-            print("TestSecを非表示")
-        }
+            
+        }.navigationBarBackButtonHidden(true)
+            .onAppear {
+                print("TestSecを表示")
+            }
+            .onDisappear {
+                print("TestSecを非表示")
+            }
+
     }
+    
 }

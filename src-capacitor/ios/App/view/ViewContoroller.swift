@@ -21,10 +21,21 @@ struct ViewContoroller : View {
         TabView(selection: $router.toRouter) {
             Test()
                 .tag("Test")
-            
             TestSec()
                 .tag("TestSec")
+            CameraTest()
+                .tag("CameraTest")
+            ARTest()
+                .tag("ARTest")
         }
         
     }
 }
+
+
+struct ViewContoroller_Previews: PreviewProvider {
+    static var previews: some View {
+        ViewContoroller()
+    }
+}
+

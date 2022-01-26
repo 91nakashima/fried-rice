@@ -12,20 +12,26 @@ struct Test : View {
         
         
         VStack {
+            
             Button(action: {
-                router.toRouter = "TestSec"
+                // router.toRouter = "TestSec"
+                router.toRouter = "ARTest"
+                
             }, label: {
                 Text("swiftUI1枚目")
             })
             
-            
-        }.onAppear {
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .onAppear {
             print("SwiftUIを表示")
-        }.onDisappear {
+        }
+        .onDisappear {
             print("SwiftUIを非表示")
         }
         
         
-        
     }
 }
+
+

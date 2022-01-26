@@ -11,8 +11,10 @@ export default Echo
 
 // ここを使う
 // import Echo from '../helper/EchoPlugin'
+//
 // const test = async () => {
 //   const value = await Echo.echo({ value: 'Hello World!' })
 //   alert(value.value)
 // }
+//
 // test()
