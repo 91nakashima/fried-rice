@@ -16,9 +16,20 @@
 		50B271D11FEDC1A000F3C39B /* public in Resources */ = {isa = PBXBuildFile; fileRef = 50B271D01FEDC1A000F3C39B /* public */; };
 		851B4306279E375600FAA6FA /* ViewContoroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851B4305279E375600FAA6FA /* ViewContoroller.swift */; };
 		851B4309279E378E00FAA6FA /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851B4308279E378E00FAA6FA /* Header.swift */; };
-		851B430B279E898F00FAA6FA /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851B430A279E898F00FAA6FA /* Color.swift */; };
+		851B430B279E898F00FAA6FA /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851B430A279E898F00FAA6FA /* ColorExtensions.swift */; };
 		851B430D279F97E100FAA6FA /* CameraTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851B430C279F97E100FAA6FA /* CameraTest.swift */; };
 		851B430F27A1156900FAA6FA /* ARTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851B430E27A1156900FAA6FA /* ARTest.swift */; };
+		851B431227A237F800FAA6FA /* MetalTextureViewConfidence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851B431127A237F800FAA6FA /* MetalTextureViewConfidence.swift */; };
+		851B431727A2380900FAA6FA /* ARReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851B431327A2380900FAA6FA /* ARReceiver.swift */; };
+		851B431827A2380900FAA6FA /* MetalTextureViewDepth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851B431427A2380900FAA6FA /* MetalTextureViewDepth.swift */; };
+		851B431927A2380900FAA6FA /* MetalTextureViewCoefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851B431527A2380900FAA6FA /* MetalTextureViewCoefs.swift */; };
+		851B431A27A2380900FAA6FA /* ARDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851B431627A2380900FAA6FA /* ARDataProvider.swift */; };
+		851B432127A2381800FAA6FA /* MetalDepthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851B431C27A2381700FAA6FA /* MetalDepthView.swift */; };
+		851B432227A2381800FAA6FA /* EnvironmentVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851B431D27A2381700FAA6FA /* EnvironmentVariables.swift */; };
+		851B432327A2381800FAA6FA /* shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 851B431E27A2381700FAA6FA /* shaders.metal */; };
+		851B432427A2381800FAA6FA /* MetalPointCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851B431F27A2381700FAA6FA /* MetalPointCloud.swift */; };
+		851B432627A25CFE00FAA6FA /* TestTestFun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851B432527A25CFE00FAA6FA /* TestTestFun.swift */; };
+		851B432A27A378BD00FAA6FA /* ARExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851B432927A378BD00FAA6FA /* ARExtensions.swift */; };
 		851B849F27952CF2009A7EBF /* MainState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851B849E27952CF2009A7EBF /* MainState.swift */; };
 		852370E127968B8500FFDA5A /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852370E027968B8500FFDA5A /* MyViewController.swift */; };
 		852370E427968D9300FFDA5A /* TestWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852370E327968D9300FFDA5A /* TestWebView.swift */; };
@@ -41,9 +52,20 @@
 		50B271D01FEDC1A000F3C39B /* public */ = {isa = PBXFileReference; lastKnownFileType = folder; path = public; sourceTree = SOURCE_ROOT; };
 		851B4305279E375600FAA6FA /* ViewContoroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewContoroller.swift; sourceTree = "<group>"; };
 		851B4308279E378E00FAA6FA /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
-		851B430A279E898F00FAA6FA /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		851B430A279E898F00FAA6FA /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
 		851B430C279F97E100FAA6FA /* CameraTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraTest.swift; sourceTree = "<group>"; };
 		851B430E27A1156900FAA6FA /* ARTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARTest.swift; sourceTree = "<group>"; };
+		851B431127A237F800FAA6FA /* MetalTextureViewConfidence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalTextureViewConfidence.swift; sourceTree = "<group>"; };
+		851B431327A2380900FAA6FA /* ARReceiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARReceiver.swift; sourceTree = "<group>"; };
+		851B431427A2380900FAA6FA /* MetalTextureViewDepth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalTextureViewDepth.swift; sourceTree = "<group>"; };
+		851B431527A2380900FAA6FA /* MetalTextureViewCoefs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalTextureViewCoefs.swift; sourceTree = "<group>"; };
+		851B431627A2380900FAA6FA /* ARDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARDataProvider.swift; sourceTree = "<group>"; };
+		851B431C27A2381700FAA6FA /* MetalDepthView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalDepthView.swift; sourceTree = "<group>"; };
+		851B431D27A2381700FAA6FA /* EnvironmentVariables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentVariables.swift; sourceTree = "<group>"; };
+		851B431E27A2381700FAA6FA /* shaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = shaders.metal; sourceTree = "<group>"; };
+		851B431F27A2381700FAA6FA /* MetalPointCloud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalPointCloud.swift; sourceTree = "<group>"; };
+		851B432527A25CFE00FAA6FA /* TestTestFun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTestFun.swift; sourceTree = "<group>"; };
+		851B432927A378BD00FAA6FA /* ARExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARExtensions.swift; sourceTree = "<group>"; };
 		851B849E27952CF2009A7EBF /* MainState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainState.swift; sourceTree = "<group>"; };
 		852370E027968B8500FFDA5A /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		852370E327968D9300FFDA5A /* TestWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestWebView.swift; sourceTree = "<group>"; };
@@ -80,6 +102,7 @@
 		504EC2FB1FED79650016851F = {
 			isa = PBXGroup;
 			children = (
+				851B432527A25CFE00FAA6FA /* TestTestFun.swift */,
 				851B4307279E377800FAA6FA /* component */,
 				859EF09527950B3D00BC5D98 /* view */,
 				856754A627979B4B0041CA9A /* model */,
@@ -134,6 +157,22 @@
 			path = component;
 			sourceTree = "<group>";
 		};
+		851B431027A237CD00FAA6FA /* aRSample */ = {
+			isa = PBXGroup;
+			children = (
+				851B431627A2380900FAA6FA /* ARDataProvider.swift */,
+				851B431D27A2381700FAA6FA /* EnvironmentVariables.swift */,
+				851B431F27A2381700FAA6FA /* MetalPointCloud.swift */,
+				851B431C27A2381700FAA6FA /* MetalDepthView.swift */,
+				851B431E27A2381700FAA6FA /* shaders.metal */,
+				851B431327A2380900FAA6FA /* ARReceiver.swift */,
+				851B431527A2380900FAA6FA /* MetalTextureViewCoefs.swift */,
+				851B431427A2380900FAA6FA /* MetalTextureViewDepth.swift */,
+				851B431127A237F800FAA6FA /* MetalTextureViewConfidence.swift */,
+			);
+			path = aRSample;
+			sourceTree = "<group>";
+		};
 		851B849D27952CDF009A7EBF /* state */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,7 +184,8 @@
 		856754A627979B4B0041CA9A /* model */ = {
 			isa = PBXGroup;
 			children = (
-				851B430A279E898F00FAA6FA /* Color.swift */,
+				851B430A279E898F00FAA6FA /* ColorExtensions.swift */,
+				851B432927A378BD00FAA6FA /* ARExtensions.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -153,6 +193,7 @@
 		859EF09527950B3D00BC5D98 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				851B431027A237CD00FAA6FA /* aRSample */,
 				852370E027968B8500FFDA5A /* MyViewController.swift */,
 				851B4305279E375600FAA6FA /* ViewContoroller.swift */,
 				859EF0962795108000BC5D98 /* Test.swift */,
@@ -277,19 +318,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				851B431227A237F800FAA6FA /* MetalTextureViewConfidence.swift in Sources */,
+				851B431A27A2380900FAA6FA /* ARDataProvider.swift in Sources */,
 				851B4309279E378E00FAA6FA /* Header.swift in Sources */,
 				504EC3081FED79650016851F /* AppDelegate.swift in Sources */,
+				851B432427A2381800FAA6FA /* MetalPointCloud.swift in Sources */,
 				859EF0972795108000BC5D98 /* Test.swift in Sources */,
 				851B430F27A1156900FAA6FA /* ARTest.swift in Sources */,
 				852370E127968B8500FFDA5A /* MyViewController.swift in Sources */,
+				851B432A27A378BD00FAA6FA /* ARExtensions.swift in Sources */,
+				851B431927A2380900FAA6FA /* MetalTextureViewCoefs.swift in Sources */,
 				851B430D279F97E100FAA6FA /* CameraTest.swift in Sources */,
+				851B432327A2381800FAA6FA /* shaders.metal in Sources */,
 				859EF091279500C500BC5D98 /* EchoPlugin.swift in Sources */,
 				852370E427968D9300FFDA5A /* TestWebView.swift in Sources */,
+				851B432127A2381800FAA6FA /* MetalDepthView.swift in Sources */,
 				859EF094279500D200BC5D98 /* EchoPlugin.m in Sources */,
-				851B430B279E898F00FAA6FA /* Color.swift in Sources */,
+				851B432627A25CFE00FAA6FA /* TestTestFun.swift in Sources */,
+				851B431827A2380900FAA6FA /* MetalTextureViewDepth.swift in Sources */,
+				851B431727A2380900FAA6FA /* ARReceiver.swift in Sources */,
+				851B430B279E898F00FAA6FA /* ColorExtensions.swift in Sources */,
 				851B849F27952CF2009A7EBF /* MainState.swift in Sources */,
 				851B4306279E375600FAA6FA /* ViewContoroller.swift in Sources */,
 				854BB6F4279A558A00C86E07 /* TestSec.swift in Sources */,
+				851B432227A2381800FAA6FA /* EnvironmentVariables.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

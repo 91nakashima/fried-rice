@@ -23,3 +23,6 @@ https://v3.ja.vuejs.org/guide/migration/v-model.html#%E6%A6%82%E8%A6%81
 
 ts
 https://github.com/type-challenges/type-challenges/blob/master/README.ja.md
+
+拡張現実の壁に絵画や写真などの 2D 画像を配置する方法
+https://mobile-ar.reality.news/how-to/arkit-101-place-2d-images-like-painting-photo-wall-augmented-reality-0187598/

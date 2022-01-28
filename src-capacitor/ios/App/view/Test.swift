@@ -22,7 +22,7 @@ struct Test : View {
             })
             
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
+//        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .onAppear {
             print("SwiftUIを表示")
         }
